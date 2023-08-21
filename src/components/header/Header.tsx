@@ -73,7 +73,7 @@ const Header = () => {
             value={searchQuery}
             className="w-full h-full rounded-md px-2 placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazon_yellow"
             type="text"
-            placeholder="Search  products"
+            placeholder="Search next_amazon_yt products"
           />
           <span className="w-12 h-full bg-amazon_yellow text-black text-2xl flex items-center justify-center absolute right-0 rounded-tr-md rounded-br-md">
             <HiOutlineSearch />

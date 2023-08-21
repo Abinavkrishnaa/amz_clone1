@@ -18,7 +18,7 @@ const Products = ({ productData }: any) => {
           title,
           brand,
           category,
-          description,
+          
           image,
           isNew,
           oldPrice,
@@ -36,7 +36,7 @@ const Products = ({ productData }: any) => {
                     _id: _id,
                     brand: brand,
                     category: category,
-                    description: description,
+                    
                     image: image,
                     isNew: isNew,
                     oldPrice: oldPrice,
@@ -61,7 +61,7 @@ const Products = ({ productData }: any) => {
                         _id: _id,
                         brand: brand,
                         category: category,
-                        description: description,
+                        
                         image: image,
                         isNew: isNew,
                         oldPrice: oldPrice,
@@ -82,7 +82,7 @@ const Products = ({ productData }: any) => {
                         _id: _id,
                         brand: brand,
                         category: category,
-                        description: description,
+                        
                         image: image,
                         isNew: isNew,
                         oldPrice: oldPrice,
@@ -123,7 +123,7 @@ const Products = ({ productData }: any) => {
                       _id: _id,
                       brand: brand,
                       category: category,
-                      description: description,
+                      
                       image: image,
                       isNew: isNew,
                       oldPrice: oldPrice,

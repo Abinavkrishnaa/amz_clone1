@@ -12,6 +12,7 @@ import {
 interface Item {
   brand: string;
   category: string;
+  description: string;
   image: string;
   isNew: boolean;
   oldPrice: number;
@@ -38,7 +39,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
       <div className="flex items-center px-2 gap-4">
         <div className="flex flex-col gap-1">
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
-          
+          <p className="text-sm text-gray-600">{item.description}</p>
           <p className="text-sm text-gray-600">
             Unit Price{" "}
             <span className="font-semibold text-amazon_blue">
@@ -54,7 +55,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
                       _id: item._id,
                       brand: item.brand,
                       category: item.category,
-                      
+                      description: item.description,
                       image: item.image,
                       isNew: item.isNew,
                       oldPrice: item.oldPrice,
@@ -76,7 +77,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
                       _id: item._id,
                       brand: item.brand,
                       category: item.category,
-                      
+                      description: item.description,
                       image: item.image,
                       isNew: item.isNew,
                       oldPrice: item.oldPrice,

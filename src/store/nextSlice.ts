@@ -1,5 +1,4 @@
-import { CreateSliceOptions, createSlice } from "@reduxjs/toolkit";
-import exp from "constants";
+import { createSlice } from "@reduxjs/toolkit";
 import { StoreProduct } from "../../type";
 
 interface NextState {
@@ -9,29 +8,28 @@ interface NextState {
   userInfo: null | string;
 }
 
-const initialState:NextState ={
-    productData:[],
-    favoriteData:[],
-    allProducts:[],
-    userInfo:null,
+const initialState: NextState = {
+  productData: [],
+  favoriteData: [],
+  allProducts: [],
+  userInfo: null,
 };
 
 export const nextSlice = createSlice({
-    name: "next",
-    initialState,
-    reducers: {
-      addToCart: (state, action) => {
-        const existingProduct = state.productData.find((item : StoreProduct)=>
-          item._id=== action.payload._id
-        );
-        if (existingProduct) {
-          existingProduct.quantity += action.payload.quantity;
-        } else {
-          state.productData.push(action.payload);
-        }
-     } ,
-
-     addToFavorite: (state, action) => {
+  name: "next",
+  initialState,
+  reducers: {
+    addToCart: (state, action) => {
+      const existingProduct = state.productData.find(
+        (item: StoreProduct) => item._id === action.payload._id
+      );
+      if (existingProduct) {
+        existingProduct.quantity += action.payload.quantity;
+      } else {
+        state.productData.push(action.payload);
+      }
+    },
+    addToFavorite: (state, action) => {
       const existingProduct = state.favoriteData.find(
         (item: StoreProduct) => item._id === action.payload._id
       );
@@ -41,7 +39,6 @@ export const nextSlice = createSlice({
         state.favoriteData.push(action.payload);
       }
     },
-
     increaseQuantity: (state, action) => {
       const existingProduct = state.productData.find(
         (item: StoreProduct) => item._id === action.payload._id
@@ -85,18 +82,20 @@ export const nextSlice = createSlice({
     setAllProducts: (state, action) => {
       state.allProducts = action.payload;
     },
-  }});
-  export const {
-    addToCart,
-    addToFavorite,
-    increaseQuantity,
-    decreaseQuantity,
-    deleteProduct,
-    resetCart,
-    addUser,
-    removeUser,
-    setAllProducts,
-    deleteFavorite,
-    resetFavoriteData,
-  } = nextSlice.actions;
-  export default nextSlice.reducer;
+  },
+});
+
+export const {
+  addToCart,
+  addToFavorite,
+  increaseQuantity,
+  decreaseQuantity,
+  deleteProduct,
+  resetCart,
+  addUser,
+  removeUser,
+  setAllProducts,
+  deleteFavorite,
+  resetFavoriteData,
+} = nextSlice.actions;
+export default nextSlice.reducer;

@@ -1,13 +1,10 @@
 import React from "react";
 import { StateProps, StoreProduct } from "../../type";
 import { useSelector } from "react-redux";
-
-
-import Link from "next/link";
 import CartProduct from "@/components/CartProduct";
 import ResetCart from "@/components/ResetCart";
+import Link from "next/link";
 import CartPayment from "@/components/CartPayment";
-
 
 const CartPage = () => {
   const { productData } = useSelector((state: StateProps) => state.next);
@@ -22,23 +19,18 @@ const CartPage = () => {
               </p>
               <p className="text-lg font-semibold text-amazon_blue">Subtitle</p>
             </div>
-            <div>
-              {
-                productData.map((item:StoreProduct)=>(
-                  <div key={item._id} >
-                    < CartProduct item={item} />
-                  </div>
-
-                ))
-              }
+            <div className="pt-2 flex flex-col gap-2">
+              {productData.map((item: StoreProduct) => (
+                <div key={item._id}>
+                  <CartProduct item={item} />
+                </div>
+              ))}
               <ResetCart />
-            </div>          
+            </div>
           </div>
           <div className="bg-white h-64 col-span-1 p-4 rounded-lg flex items-center justify-center">
             <CartPayment />
           </div>
-         
-         
         </>
       ) : (
         <div className="bg-white h-64 col-span-5 flex flex-col items-center justify-center py-5 rounded-lg shadow-lg">

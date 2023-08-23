@@ -4,7 +4,7 @@ import FormattedPrice from "./FormattedPrice";
 interface Props {
   brand: string;
   category: string;
-  description: string;
+  
   image: string;
   isNew: boolean;
   oldPrice: number;
@@ -25,7 +25,7 @@ const SearchProducts = ({ item }: Item) => {
           {item.brand}_{item.category}
         </p>
         <p className="text-lg font-medium">{item.title}</p>
-        <p className="text-xs">{item.description.substring(0, 100)}</p>
+        
         <p className="text-sm flex items-center gap-1">
           price:{" "}
           <span className="font-semibold">
